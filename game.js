@@ -1,7 +1,7 @@
 function computerPlay() {
-    const play = ["rock", "paper", "scissors"]
+    const possibleMoves = ["rock", "paper", "scissors"]
     let randomNum = Math.floor(Math.random() * 3)
-    let randomPlay = play[randomNum]
+    let randomPlay = possibleMoves[randomNum]
     return randomPlay
 }
 
@@ -20,14 +20,13 @@ function playRound(playerSelection, computerSelection) {
         console.log(`Boo hoo, you lose! ${computerSelection[0].toUpperCase()}${computerSelection.slice(1)} beats ${playerSelection[0].toUpperCase()}${playerSelection.slice(1)}. Your current score is ${score}.`)
     }
     return score
+
 }
 
 function game(score) {
-
-    let playerSelection = prompt("Choose Rock, Paper or Scissors!").toLowerCase()
-    let computerSelection = computerPlay()
-    score = playRound(playerSelection, computerSelection)
-        
+    let playerMove = prompt("Choose Rock, Paper or Scissors!").toLowerCase()
+    let computerMove = computerPlay()
+    score = playRound(playerMove, computerMove) 
 }
 
 
